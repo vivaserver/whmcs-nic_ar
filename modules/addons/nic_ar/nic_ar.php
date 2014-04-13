@@ -70,6 +70,33 @@ function nic_ar_output($params) {
       echo "<td class='fieldlabel'>Activity:</td>";
       echo "<td class='fieldarea'>{$result['contacts']['registrant']['activity']}</td>";
       echo '</tr>';
+      if (!empty($result['contacts']['registrant']['addresses']['local'])) {
+        $location = $result['contacts']['registrant']['addresses']['local'];
+        echo '<tr>';
+        echo "<td class='fieldlabel'>Phone:</td>";
+        echo "<td class='fieldarea'>{$location['phone']}</td>";
+        echo '</tr>';
+        echo '<tr>';
+        echo "<td class='fieldlabel'>Address:</td>";
+        echo "<td class='fieldarea'>{$location['address']}</td>";
+        echo '</tr>';
+        echo '<tr>';
+        echo "<td class='fieldlabel'>City:</td>";
+        echo "<td class='fieldarea'>{$location['city']}</td>";
+        echo '</tr>';
+        echo '<tr>';
+        echo "<td class='fieldlabel'>Province:</td>";
+        echo "<td class='fieldarea'>{$location['province']}</td>";
+        echo '</tr>';
+        echo '<tr>';
+        echo "<td class='fieldlabel'>Zip Code:</td>";
+        echo "<td class='fieldarea'>{$location['zip_code']}</td>";
+        echo '</tr>';
+        echo '<tr>';
+        echo "<td class='fieldlabel'>Country:</td>";
+        echo "<td class='fieldarea'>{$location['country']}</td>";
+        echo '</tr>';
+      }
       #
       echo '<tr>';
       echo '<td class="fieldlabel">Name Servers</td>';
