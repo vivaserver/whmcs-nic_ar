@@ -19,6 +19,7 @@ function nic_ar_config() {
     "version" => "0.1",
     "author"  => "Cristian R. Arroyo",
     'fields'  => array(
+      # the "token" allows for automatic resolution of CAPTCHAs that NIC.ar might ask before resolving the domain lookup
       "token" => array('FriendlyName'=>'Token',"Type"=>"text", "Description"=>"<a href='http://api.nicalert.me/docs#sp4' target='_blank'>API Token</a>")
     )
   );
@@ -32,7 +33,7 @@ function nic_ar_output($params) {
       $domain = trim($_REQUEST['name']).trim($_REQUEST['domain']);
       $result = $client->whois($domain);
       $link   = $result['status']['delegated'] ? "<a href='http://www.{$domain}' target='_blank'>{$domain}</a>" : $domain;
-      echo '<div class="infobox">';  # also .successbox
+      echo '<div class="infobox">';
       echo "<strong><span class='title'>{$link}</span></strong>";
       echo '<br>';
       echo 'This domain name is already registered.';
@@ -124,10 +125,16 @@ function nic_ar_output($params) {
       echo '<p>This simple Addon provides quick Argentinian (.ar) domain lookups. Just search for a domain name using the form below.</p>';
     }
   }
+  catch (\NicAr\NotFound $e) { 
+    echo '<div class="successbox">';
+    echo "<strong><span class='title'>This domain name is not registered yet.</span></strong><br>";
+    echo "You can register <strong>{$domain}</strong> at <a href='http://www.nic.ar' target='_blank'>NIC.ar</a>.";
+    echo '</div>';
+  }
   catch (\Exception $e) { 
     echo '<div class="errorbox">';
-    echo "<strong><span class='title'>An error has occurred.</span></strong>";
-    echo 'Please help improve the NIC.ar (unofficial) API reporting the following bug at <a href="http://api.nicalert.me/contact">this page</a>.';
+    echo "<strong><span class='title'>An error has occurred.</span></strong><br>";
+    echo 'Please help improve the NIC.ar (unofficial) API reporting the following bug at <a href="http://api.nicalert.me/contact" target="_blank">this page</a>.';
     echo '<pre>'; var_dump($e); echo '</pre>';
     echo '</div>';
   }
