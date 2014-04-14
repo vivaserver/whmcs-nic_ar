@@ -1,5 +1,7 @@
 # NIC.ar addon for WHMCS
 
+![screenshot](https://raw.github.com/vivaserver/whmcs-nic_ar/master/screenshot.png)
+
 A [WHMCS][whmcs] admin. addon for the [nic!alert API][api] to [NIC.ar][nic]
 
 ## Installation
