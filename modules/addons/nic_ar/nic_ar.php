@@ -2,7 +2,9 @@
 #
 # NIC.ar Addon WHMCS Module v0.1
 #
+# A WHMCS admin. addon for the nic!alert API to NIC.ar
 # Provides quick Argentinian domain lookups on a convenient Admin page.
+# https://github.com/vivaserver/whmcs-nic_ar
 #
 # (c)2014 Cristian R. Arroyo <cristian.arroyo@vivaserver.com>
 #
@@ -129,6 +131,12 @@ function nic_ar_output($params) {
     echo '<div class="successbox">';
     echo "<strong><span class='title'>This domain name is not registered yet.</span></strong><br>";
     echo "You can register <strong>{$domain}</strong> at <a href='http://www.nic.ar' target='_blank'>NIC.ar</a>.";
+    echo '</div>';
+  }
+  catch (\NicAr\CaptchaError $e) { 
+    echo '<div class="errorbox">';
+    echo "<strong><span class='title'>You must resolve a CAPTCHA challenge first.</span></strong><br>";
+    echo "You can retry at the <a href='https://nic.ar/buscarDominio.xhtml' target='_blank'>NIC.ar</a> site or consider getting a <a href='http://api.nicalert.me/pricing' target='_blank'>nic!alert API token</a>.";
     echo '</div>';
   }
   catch (\Exception $e) { 
