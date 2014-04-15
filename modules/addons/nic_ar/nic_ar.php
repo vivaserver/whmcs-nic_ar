@@ -147,7 +147,7 @@ function nic_ar_output($params) {
     echo '</div>';
   }
   echo '<br>';
-  echo '<form action="/admin/addonmodules.php" method="POST">';
+  echo "<form action='{$_SERVER['PHP_SELF']}' method='POST'>";  # consider $customadminpath
   echo '<input name="module" type="hidden" value="nic_ar">';
   echo '<input name="name" placeholder="domain-name">';
   echo '&nbsp;';
