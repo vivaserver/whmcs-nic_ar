@@ -63,7 +63,7 @@ function nic_ar_output($params) {
       echo '</tr>';
       #
       echo '<tr>';
-      echo '<td class="fieldlabel">Registrant Contact</td>';
+      echo '<td class="fieldlabel"><strong>Registrant Contact</strong></td>';
       echo '<td></td>';
       echo '</tr>';
       #
@@ -108,7 +108,7 @@ function nic_ar_output($params) {
       }
       #
       echo '<tr>';
-      echo '<td class="fieldlabel">Name Servers</td>';
+      echo '<td class="fieldlabel"><strong>Name Servers</strong></td>';
       echo '<td></td>';
       echo '</tr>';
       #
