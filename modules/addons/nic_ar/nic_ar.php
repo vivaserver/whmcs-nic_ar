@@ -56,7 +56,10 @@ function nic_ar_output($params) {
       echo '</tr>';
       echo '<tr>';
       echo "<td class='fieldlabel'>Expires on:</td>";
-      echo "<td class='fieldarea'>{$result['expires_on']} (".$interval->format('%a')." days from now)</td>";
+      echo "<td class='fieldarea'>";
+      echo "{$result['expires_on']}";
+      if ($interval>0) echo " &nbsp; (".$interval->format('%a')." days from now)";
+      echo "</td>";
       echo '</tr>';
       #
       echo '<tr>';
