@@ -47,13 +47,16 @@ function nic_ar_output($params) {
       echo "<td class='fieldarea'>{$result['message']}</td>";
       echo '</tr>';
       #
+      $created_on = new DateTime('now');
+      $expires_on = new DateTime($result['expires_on']);
+      $interval   = date_diff($created_on,$expires_on);
       echo '<tr>';
       echo "<td class='fieldlabel'>Created on:</td>";
       echo "<td class='fieldarea'>{$result['created_on']}</td>";
       echo '</tr>';
       echo '<tr>';
       echo "<td class='fieldlabel'>Expires on:</td>";
-      echo "<td class='fieldarea'>{$result['expires_on']}</td>";
+      echo "<td class='fieldarea'>{$result['expires_on']} (".$interval->format('%a')." days from now)</td>";
       echo '</tr>';
       #
       echo '<tr>';
