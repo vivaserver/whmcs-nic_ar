@@ -3,6 +3,7 @@
 
   # Restful_agent
   # A little library for accessing URLs using Curl in a RESTful way
+  # https://github.com/vivaserver/php-restful_agent
   #
   # (c)2013 Cristian R. Arroyo <cristian.arroyo@vivaserver.com>
 
@@ -70,5 +71,3 @@
 	    else throw new \Exception(curl_error($this->handler));
     }
   }
-
-/* End of file Restful_agent */

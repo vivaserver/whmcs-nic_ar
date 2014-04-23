@@ -3,6 +3,7 @@ namespace NicAr;
 
 # NicAr\Client
 # This is the _official_ PHP client for accessing the public nic!alert API at http://api.nicalert.me
+# https://github.com/vivaserver/php-nic_ar
 #
 # (c)2014 Cristian R. Arroyo <cristian.arroyo@vivaserver.com>
 
