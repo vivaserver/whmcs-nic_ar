@@ -19,5 +19,37 @@ function nic_ar_ConfigOptions() {
 }
 
 function nic_ar_CreateAccount($params) {
+  $token       = $params['configoption1'];
+  $service_id  = $params['serviceid'];
+  $product_id  = $params['pid'];
+  $domain_name = strtolower(trim($params['domain']));
+
+  if (!empty($domain_name)) {
+    $client = new \NicAr\Client($token,TRUE);
+    try {
+      $result = $client->whois($domain_name);
+		  return "Error Message Goes Here...";
+    }
+    catch (\NicAr\NotFound $e) { 
+      return 'success';
+    }
+    catch (\NicAr\CaptchaError $e) { 
+		  return "Shameful Error Message Goes Here...";
+    }
+    catch (\Exception $e) { 
+      return $e->getMessage();
+    }
+  }
+}
+
+function nic_ar_TerminateAccount($params) {
+  # TODO
+}
+
+function nic_ar_SuspendAccount($params) {
+  # TODO
+}
+
+function nic_ar_UnsuspendAccount($params) {
   # TODO
 }
