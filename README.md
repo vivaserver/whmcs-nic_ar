@@ -28,7 +28,7 @@ Do not forget to assing a **pricing** to each, or else they will *not* show up i
 
 ![screenshot](https://raw.github.com/vivaserver/whmcs-nic_ar/master/screenshot-whois.png)
 
-Also, please note that this service will not produce accurate results when it's overloaded by requests; to overcome this limitation, please check the [nic!alert API pricing][pricing].
+Also, please note that this service will not produce accurate results when it's overloaded by requests; to overcome this limitation, please check the [nic!alert API pricing][price].
 
 ## WHMCS version support
 
