@@ -4,7 +4,7 @@
 
 A [WHMCS][whmcs] admin. addon for the [nic!alert API][api] to [NIC.ar][nic]
 
-## Installation
+## Addon installation
 
 Just copy the `modules/addons/nic_ar` directory into the `modules/addons` directory of your WHMCS installation.
 Later you can enable and configure the addon from the *Setup &gt; Addon Modules* menu option of the WHMCS Admin. interface.
