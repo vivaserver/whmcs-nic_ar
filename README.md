@@ -15,13 +15,13 @@ Later you can enable and configure the addon from the **Setup &gt; Addon Modules
 
 You can also test for the availabiltity of any ".ar" domain name adding the following lines to the `includes/whoisservers.php` file of your WHMCS installation:
 
-    .com.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
-    .gob.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
-    .int.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
-    .mil.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
-    .net.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
-    .org.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
-    .tur.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-true
+    .com.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
+    .gob.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
+    .int.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
+    .mil.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
+    .net.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
+    .org.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
+    .tur.ar|http://api.nicalert.me/v1/available/|HTTPREQUEST-:true
 
 To enable these domains in your stock WHMCS `/domainchecker.php` page, you have to explicitly add your selection of supported domains in the **Setup &gt; Product/Services &gt; Domain Pricing** menu option of the Admin. interface.
 Do not forget to assing a **pricing** to each, or else they will *not* show up in your `/domainchecker.php` page.
