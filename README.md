@@ -1,6 +1,6 @@
 # NIC.ar support for WHMCS
 
-This project adds some features to support Argetinian TLDs (".ar") to the popular client management, billing and support solution for webhosting resellers know as [WHMCS][whmcs].
+This project adds some features to support Argetinian TLDs (".ar") to the popular client management, billing and support solution for webhosting resellers known as [WHMCS][whmcs].
 
 ## Addon installation
 
